@@ -1,0 +1,54 @@
+URLWATCH README
+===============
+
+ABOUT
+-----
+
+This is a simple URL watcher, designed to send you diffs of webpages as they
+change. Ideal for watching web pages of university courses, so you always
+know when lecture dates have changed or new tasks are online :)
+
+
+QUICK START
+-----------
+
+1. Start "urlwatch"
+2. Edit and rename the examples in ~/.urlwatch/
+3. Add "urlwatch" to your crontab (crontab -e)
+4. Receive change notifications via e-mail
+5. Customize your hooks in ~/.urlwatch/lib/
+
+
+FREQUENTLY ASKED QUESTIONS
+--------------------------
+
+Q: How do I add/remove URLs?
+A: Edit ~/.urlwatch/urls.txt
+
+Q: A page changes some content on every reload. How do I prevent urlwatch
+   from always displaying these changes?
+A: Edit ~/.urlwatch/lib/hooks.py and implement your filters there. Examples
+   are included in the urlwatch source distribution.
+
+Q: How do I configure urlwatch as a cron job?
+A: Use "crontab -e" to add the command "urlwatch" to your crontab. Make sure
+   stdout of your cronjobs is mailed to you, so you also get the notifications.
+
+Q: Is there an easy way to show changes of .ics files?
+A: Indeed there is. See the example hooks.py file.
+
+Q: What about badly-formed HTML (long lines, etc..)?
+A: Use python-utidylib. See the example hooks.py file.
+
+Q: Is there a way to make the output more human-readable?
+Q: Is there a way to turn it into a diff of parsed HTML perhaps?
+A: Of course. See the example hooks.py file -> use html2txt.html2text(data)
+
+
+CONTACT
+-------
+
+Website: http://thp.io/2008/urlwatch/
+E-Mail: m@thp.io
+Jabber/XMPP: thp@jabber.org
+
