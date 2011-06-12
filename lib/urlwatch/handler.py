@@ -137,24 +137,24 @@ def parse_urls_txt(urls_txt):
     # is the same as the file/directory owner and only owner can write
     allow_shelljobs = True
     shelljob_errors = []
-    current_uid = os.getuid()
+    # current_uid = os.getuid()
 
-    dirname = os.path.dirname(urls_txt)
-    dir_st = os.stat(dirname)
-    if (dir_st.st_mode & (stat.S_IWGRP | stat.S_IWOTH)) != 0:
-        shelljob_errors.append('%s is group/world-writable' % dirname)
-        allow_shelljobs = False
-    if dir_st.st_uid != current_uid:
-        shelljob_errors.append('%s not owned by %s' % (dirname, os.getlogin()))
-        allow_shelljobs = False
+    # dirname = os.path.dirname(urls_txt)
+    # dir_st = os.stat(dirname)
+    # if (dir_st.st_mode & (stat.S_IWGRP | stat.S_IWOTH)) != 0:
+    #     shelljob_errors.append('%s is group/world-writable' % dirname)
+    #     allow_shelljobs = False
+    # if dir_st.st_uid != current_uid:
+    #     shelljob_errors.append('%s not owned by %s' % (dirname, os.getlogin()))
+    #     allow_shelljobs = False
 
-    file_st = os.stat(urls_txt)
-    if (file_st.st_mode & (stat.S_IWGRP | stat.S_IWOTH)) != 0:
-        shelljob_errors.append('%s is group/world-writable' % urls_txt)
-        allow_shelljobs = False
-    if file_st.st_uid != current_uid:
-        shelljob_errors.append('%s not owned by %s' % (urls_txt, os.getlogin()))
-        allow_shelljobs = False
+    # file_st = os.stat(urls_txt)
+    # if (file_st.st_mode & (stat.S_IWGRP | stat.S_IWOTH)) != 0:
+    #     shelljob_errors.append('%s is group/world-writable' % urls_txt)
+    #     allow_shelljobs = False
+    # if file_st.st_uid != current_uid:
+    #     shelljob_errors.append('%s not owned by %s' % (urls_txt, os.getlogin()))
+    #     allow_shelljobs = False
 
     for line in open(urls_txt).read().splitlines():
         if line.strip().startswith('#') or line.strip() == '':

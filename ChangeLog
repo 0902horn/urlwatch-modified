@@ -101,3 +101,6 @@
 	* Update website URL, contact info and copyright years
 	* urlwatch 1.12 released
 
+2011-06-12 WangChuan
+    * Add support for Windows.
+    * Remove html tags when watch urls.
